@@ -1,8 +1,10 @@
 from distutils.core import setup
+import versioneer
 
 setup(
     name='SparkSafeDelta',
-    version='0.1.1',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     author='Aleksandrs Krivickis',
     author_email='aleksandrs.krivickis@gmail.com',
     packages=['sparksafedelta', 'sparksafedelta.tests'],
