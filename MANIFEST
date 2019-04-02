@@ -5,6 +5,7 @@ README.txt
 setup.cfg
 setup.py
 sparksafedelta\__init__.py
+sparksafedelta\_version.py
 sparksafedelta\sparksafedelta.py
 sparksafedelta\tests\__init__.py
 sparksafedelta\tests\test_sparksafedeltamain.py
