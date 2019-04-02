@@ -1,12 +1,12 @@
 # Spark Safe Delta
-Combination of tools that allow more convenient use of PySpark within Azure DataBricks environment.
+    Combination of tools that allow more convenient use of PySpark within Azure DataBricks environment.
 
-## Package contents:
+## I. Package contents:
 ### 1.delta_write_safe
-Tool that allows to automatically update schema of DataBricks Delta in case of Changes in data structure
+    Tool that allows to automatically update schema of DataBricks Delta in case of Changes in data structure
 
 ### 2.write_data_mysql
-Method writes data into MySQL and takes care of repartitioning in case if it's necessary.
+    Method writes data into MySQL and takes care of repartitioning in case if it's necessary.
 
 Dependencies:
    
