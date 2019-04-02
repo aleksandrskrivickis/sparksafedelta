@@ -1,4 +1,2 @@
 include *.txt
 recursive-include docs *.txt
-include versioneer.py
-include sparksafedelta/_version.py
