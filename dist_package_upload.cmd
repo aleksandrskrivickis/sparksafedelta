@@ -6,7 +6,6 @@
 @echo\
 
 set /p version_increment_type="Please select version increment type index: "
-version_increment_type
 
 @echo Deleting dist directory
 rmdir /S /Q dist
