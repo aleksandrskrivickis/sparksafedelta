@@ -44,4 +44,4 @@ git push
 pip wheel . -w ./dist/
 
 @echo Installing package
-pip install sparksafedelta --upgrade
+pip --no-cache-dir install sparksafedelta --upgrade
