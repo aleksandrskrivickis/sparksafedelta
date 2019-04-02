@@ -33,7 +33,7 @@ IF [%version_increment_type%] EQU [3] (
 python setup.py sdist
 
 @echo Uploading package
-twine upload dist/
+twine upload dist/*
 
 @echo Automatic git push
 git add --all
