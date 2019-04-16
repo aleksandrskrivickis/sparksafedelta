@@ -1,16 +1,13 @@
-def list_available_mysql_tables(spark=SP_CONTEXT, url=MYSQL_URL, driver=MYSQL_DRIVER, user=MYSQL_USER, password=MYSQL_PASSWORD,
-                                ssl_ca=MYSQL_SSL_CA_PATH, queryTimeout=MYSQL_QUERY_TIMEOUT):
+def list_available_mysql_tables(url, driver, user, password, ssl_ca, queryTimeout, spark=spark):
     """
     Method allows to list all the tables that available to a particular user.
     Returnws Spark DataFrame as a result
     """
     table_name = "(SELECT table_name FROM information_schema.tables WHERE table_type = 'base table') AS t"
-    return read_mysql(table_name, spark=spark, url=MYSQL_URL, driver=MYSQL_DRIVER, user=MYSQL_USER, password=MYSQL_PASSWORD,
-                      ssl_ca=MYSQL_SSL_CA_PATH, queryTimeout=MYSQL_QUERY_TIMEOUT)
+    return read_mysql(table_name, url=url, driver=driver, user=user, password=password, ssl_ca=ssl_ca, queryTimeout=queryTimeout, spark=spark)
 
 
-def read_mysql(table_name, spark=SP_CONTEXT, url=MYSQL_URL, driver=MYSQL_DRIVER, user=MYSQL_USER, password=MYSQL_PASSWORD,
-               ssl_ca=MYSQL_SSL_CA_PATH, queryTimeout=MYSQL_QUERY_TIMEOUT):
+def read_mysql(table_name, url, driver, user, password, queryTimeout, ssl_ca=None, spark=spark):
     """
     Method allows fetch the table, or a query as a Spark DataFrame.
     Returnws Spark DataFrame as a result.
@@ -43,9 +40,7 @@ def remove_columns(p_spark_dataframe, p_columns_to_remove_csv="", delimiter=";")
     return p_spark_dataframe
 
 
-def write_data_mysql(p_spark_dataframe, p_mysql_dbtable, spark=SP_CONTEXT, p_num_partitions=-1, url=MYSQL_URL, driver=MYSQL_DRIVER,
-                     user=MYSQL_USER, password=MYSQL_PASSWORD, ssl_ca=MYSQL_SSL_CA_PATH,
-                     queryTimeout=MYSQL_QUERY_TIMEOUT):
+def write_data_mysql(p_spark_dataframe, p_mysql_dbtable, url, driver, user, password, queryTimeout, ssl_ca="", p_num_partitions=-1, spark=spark):
     """
     Method writes data into MySQL and takes care of repartitioning in case if it's necessary.
 
