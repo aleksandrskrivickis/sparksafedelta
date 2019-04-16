@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='SparkSafeDelta',
-    version='0.3.6',
+    version='0.3.7',
     author='Aleksandrs Krivickis',
     author_email='aleksandrs.krivickis@gmail.com',
     packages=['sparksafedelta', 'sparksafedelta.tests'],

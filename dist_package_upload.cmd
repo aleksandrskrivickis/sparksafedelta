@@ -27,7 +27,8 @@ IF [%version_increment_type%] EQU [3] (
     bumpversion --allow-dirty patch setup.py
 )
 
-
+@echo Copying readme.md to readme.txt
+cp README.md README.txt
 
 @echo Creating package
 python setup.py sdist
